@@ -1,0 +1,9 @@
+[project]
+name = "planetary-surveyor"
+version = "1.1.0"
+description = "One-key full-planet fauna and best-effort flora/mineral discovery for No Man's Sky"
+requires-python = ">=3.13,<3.14"
+dependencies = ["nmspy==178994.0"]
+
+[tool.ruff]
+line-length = 100

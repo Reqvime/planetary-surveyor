@@ -1,0 +1,29 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Machine-local paths and configuration.
+config.local.ps1
+*.local.toml
+PlanetaryDiscoveryScanner.ini
+
+# Runtime output must never be committed.
+logs/*
+!logs/.gitkeep
+dumps/
+*.dmp
+dist/
+autoload/build/
+autoload/smoke/
+autoload/smoke-*/
+autoload/installer-test-*/
+
+# Ghidra project databases are local analysis artifacts.
+analysis/*.gpr
+analysis/*.rep/
+
+# Keep the final Nexus artwork, not large generation sources or old branding.
+media/nexus/*-source.png
+media/nexus/Planetary-Discovery-Scanner-*
+media/nexus/Planetary-Surveyor-tile-1920x1080.png
