@@ -79,9 +79,9 @@
 - Живая диагностика второго запуска показала, что probe был загружен, failed
   hooks отсутствовали, но effective config всё ещё содержал
   `logging.shown = true`, `log_dir = "{EXE_DIR}"` и активный `SocketHandler`.
-- Причиной оказалась Windows package virtualization: Codex Desktop видел
-  `%APPDATA%` через `OpenAI.Codex_*\LocalCache\Roaming`, тогда как обычный
-  PowerShell и NMS читали физический `%USERPROFILE%\AppData\Roaming`.
+- Причиной оказалась Windows package virtualization. Изолированное приложение
+  видело `%APPDATA%` внутри `Packages\<app-package>\LocalCache\Roaming`, а
+  обычный PowerShell и NMS читали `%USERPROFILE%\AppData\Roaming`.
 - Настоящий TOML содержал только `mod_dir`. Во время второго запуска к живому
   процессу подключён прямой `FileHandler`, после чего логирование подтверждено.
   Физический TOML также обновлён: `logging.shown = false` и проектный `log_dir`

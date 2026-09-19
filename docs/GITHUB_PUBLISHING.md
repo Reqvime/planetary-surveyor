@@ -1,70 +1,35 @@
-# Publishing to GitHub manually
+# Publishing updates
 
-The local repository already contains the history, release branch, and annotated
-tag. Do not upload the `dist` directory into the source repository; compiled
-archives belong on the GitHub Release page.
+This repository is already public at
+`https://github.com/Reqvime/planetary-surveyor`.
 
-## 1. Create the empty repository
+## Source code
 
-1. Sign in to GitHub and choose **New repository**.
-2. Suggested name: `planetary-surveyor`.
-3. Choose Public if the source should be available to contributors.
-4. Do not initialise it with a README, `.gitignore`, or licence. Those files
-   already exist locally, and initialising them remotely creates an unnecessary
-   unrelated commit.
-5. Create the repository and copy its HTTPS URL.
+Work from `main`, preferably on a short-lived branch for each change. Run the
+tests in `BUILDING.md`, review the diff, then merge or commit the change to
+`main`. Never push `dist`, `.venv`, logs, saves or local configuration files.
 
-Official reference:
-https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-new-repository
+The older experimental branches are local research history. Do not use
+`git push --all`.
 
-## 2. Push the prepared source
+## A new version
 
-Open PowerShell in `NMSDiscoveryLab`, replace the URL, and run:
+1. Update the version, README and changelog where needed.
+2. Build and test the new package, including a normal game launch with a
+   backed-up save.
+3. Commit the final source changes and push `main`.
+4. Create a new tag such as `v1.1.1` on that commit and push the tag.
+5. Create a GitHub Release from that tag. Attach only the ready-to-install
+   `Planetary-Surveyor-v1.1.1.zip` and include its SHA-256 digest.
+6. Upload the same ZIP to Nexus and update the tested game versions.
 
-```powershell
-git remote add origin https://github.com/YOUR-NAME/planetary-surveyor.git
-git push -u origin main
-git push origin v1.1.0
-```
+Do not move a published version tag or silently replace a release ZIP. If code
+or bundled files change, use a new version. A game patch that does not break
+the mod may only need an updated compatibility note.
 
-Before pushing, `git status --short` should print nothing. Do not use
-`git push --all`: the local repository retains historical experiment branches
-that are useful for research but unnecessary on the public GitHub page.
+The automatic "Source code (zip)" download on GitHub contains repository
+files, not the ready-to-install mod. Players should download the attached
+`Planetary-Surveyor-vX.Y.Z.zip` asset.
 
-If `origin` was entered incorrectly:
-
-```powershell
-git remote set-url origin https://github.com/YOUR-NAME/Planetary-Discovery-Scanner.git
-```
-
-## 3. Create the GitHub Release
-
-1. Open the repository on GitHub and select **Releases**.
-2. Select **Draft a new release**.
-3. Choose the already-pushed tag `v1.1.0`.
-4. Title it `Planetary Surveyor v1.1.0 (Public Beta)`.
-5. Paste `docs/RELEASE_NOTES_v1.1.0.md` into the description.
-6. Mark it as a pre-release because flora/mineral completion is still
-   experimental.
-7. Attach `dist\Planetary-Surveyor-v1.1.0.zip`.
-8. Save a draft, verify every attachment, then publish.
-
-GitHub automatically adds repository source ZIP/TAR archives for the tag, so the
-custom developer ZIP does not need to be attached.
-
-Official reference:
+GitHub release documentation:
 https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository
-
-## 4. Nexus Mods
-
-Use `Planetary-Surveyor-v1.1.0.zip` as the Main File. Use
-`NEXUS_DESCRIPTION.md` as the description and link the GitHub repository as
-Source/Documentation. If Nexus quarantines the file, send Support the repository
-link and point them to `BUILDING.md` and `SECURITY.md`.
-
-## 5. Future updates
-
-Develop on a feature branch from `main`. When a version is tested, merge it to
-`main`, create `release/vX.Y.Z`, add an annotated `vX.Y.Z` tag, push those refs,
-and create another GitHub Release. Do not replace assets or move a tag after a
-published release; publish a new version instead.

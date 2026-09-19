@@ -1,7 +1,8 @@
-# NMSDiscoveryLab handoff
+# Research notes
 
-Этот файл предназначен для другого coding-agent, который продолжит проект без
-повторения уже выполненного reverse engineering.
+История экспериментов и проверок. Актуальное поведение описано в корневом
+`README.md`, а порядок сборки - в `BUILDING.md`. Ниже сохранены и устаревшие
+состояния: они нужны для проверки гипотез, но не являются инструкцией к релизу.
 
 ## AUTOLOAD ПОДТВЕРЖДЁН (2026-09-15 18:09 MSK)
 
@@ -114,15 +115,15 @@ Runtime `logs/pymhf-20260915T063417.log` (F8 v2, ещё build 178938):
 `run.ps1 -PreflightOnly` проходит. В игре 178994 ещё не запускалось — первым
 делом проверить в логе `event=BuildLayoutCheck result=ok`.
 
-## КРИТИЧЕСКОЕ СОСТОЯНИЕ НА 2026-09-15 (сессия Claude, игра закрыта)
+## Состояние на 2026-09-15 (игра закрыта)
 
 Корень `Minerals 17/18` найден, F8 переведён на точный источник Flora/Mineral,
 17 unit-тестов проходят, plugin задеплоен в `GAMEDATA\MODS` (SHA256 probe
 `BCB64A08EEB71D34C4CAFE0EB47F1772778CF8E29C8B7A0643BB8A798FAB02EE`, catalogue
 `CA2DC7C76B48FC40F79247924C9E6B75B5222F8EC4F084291852CE6661327254`).
-**Нет runtime-подтверждения в игре** — до него не собирать zip и не считать
-релиз готовым. Всё ниже в разделе «Архив» — прежнее состояние Codex; его
-гипотеза про DECORATIVEGRAVELPATCH/Alt-Tab опровергнута.
+**На момент этой записи не было runtime-подтверждения в игре**. Раздел «Архив»
+ниже относится к более раннему состоянию. Гипотеза про
+DECORATIVEGRAVELPATCH/Alt-Tab опровергнута.
 
 ### Причина 17/18 (UA 4561877911412995)
 
@@ -180,14 +181,13 @@ CLAMSHELL, правило не доказано). Лишние records безв�
 - `analysis/build_stage9_scene_types.py`: `SCENE_TYPE_OVERRIDES` (STEAMVENT
   исключён, FISHFIENDROCK = Mineral). `src/planet_object_types.py`
   перегенерирован: 192 Flora / 188 Mineral, дельта ровно эти две scene. Вне
-  Codex генератору нужен
-  `LOCALAPPDATA`, указывающий на виртуализированный `%LOCALAPPDATA%` Codex
-  (`...\Packages\OpenAI.Codex_*\LocalCache\Local`).
+  виртуализированной среды генератору нужен `LOCALAPPDATA`, указывающий на
+  виртуализированный каталог `Packages\<app-package>\LocalCache\Local`.
 - Тесты: `tests/test_planet_object_catalog.py` (layout, overrides, dedupe,
   use-seed, invalid name, size>capacity, пустые массивы, focus guard); старые
   кластерные тесты удалены.
-- Прежние deployed-файлы сохранены вне проекта в scratchpad сессии Claude
-  (`backup_before_f8v2\deployed`), SHA256 probe `14112A6E…`.
+- Прежние deployed-файлы были сохранены вне проекта в
+  `backup_before_f8v2\deployed`, SHA256 probe `14112A6E…`.
 
 ### Следующий runtime-тест
 
@@ -214,7 +214,7 @@ CLAMSHELL, правило не доказано). Лишние records безв�
 - Ветка, dirty tree, stale `dist/…v1.0.0.zip`: см. «Состояние релиза/Git»
   ниже — всё ещё актуально, ничего не закоммичено.
 
-## Архив: состояние Codex на 2026-09-15 04:xx MSK (устарело)
+## Архив: состояние на 2026-09-15 04:xx MSK (устарело)
 
 Релиз **не готов**: на третьей тестовой планете интерфейс Discoveries показывает
 `Minerals 17/18`, хотя F8 больше ничего не ставит в очередь. Две предыдущие
