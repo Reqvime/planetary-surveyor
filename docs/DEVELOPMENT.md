@@ -57,7 +57,7 @@ test after a new game build.
 
 ```powershell
 .\scripts\build-autoload.ps1
-.\scripts\build-release.ps1 -Version 1.1.0
+.\scripts\build-release.ps1 -Version 1.1.1
 ```
 
 The full release build needs the matching official embeddable CPython archive at
@@ -95,7 +95,7 @@ See `UPDATE_POLICY.md` for the exact compatibility boundary.
 
 ## Continuing the unfinished research
 
-The supported v1.1.0 boundary is full fauna plus best-effort flora/minerals.
+The supported v1.1.1 boundary is full fauna plus best-effort flora/minerals.
 Future work should focus on the game's remaining flora/mineral filtering and
 alias rules, not another radius scan.
 

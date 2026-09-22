@@ -90,14 +90,14 @@ def _confirm_backup_once(assume_yes: bool) -> bool:
         return True
     print("This changes discoveries in your save.")
     answer = input("Save backed up? [y/N] ").strip().lower()
-    if answer not in ("y", "yes", "д", "да"):
+    if answer not in ("y", "yes"):
         return False
     BACKUP_CONFIRMED.write_text("confirmed\n", encoding="ascii")
     return True
 
 
 def play(dry_run: bool, assume_yes: bool) -> int:
-    print("Planetary Surveyor 1.1.0")
+    print("Planetary Surveyor 1.1.1")
     if not GAME_EXE.is_file():
         return _fail("NMS.exe not found. Check the install folder.")
     if _game_running():

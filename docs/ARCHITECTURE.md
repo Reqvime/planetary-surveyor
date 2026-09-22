@@ -92,7 +92,7 @@ submit lookup. Before mutation, each candidate is passed to the game's
 Unknown entries are queued and sent one per second through
 `SubmitDiscoveryData`. Accepted entries then call `PostSubmitDiscovery`, which
 produces the normal sound/reward-side processing. The queue pauses when NMS is
-not the foreground window and rejects another F8 request while active.
+not the foreground window and rejects another F10 request while active.
 
 Large HUD discovery cards are intentionally not fabricated. Full-planet entries
 often have no live scene object to attach to a safe notification.
@@ -100,7 +100,7 @@ often have no live scene object to attach to a safe notification.
 ## Compatibility strategy
 
 The scanner finds `SubmitDiscoveryData`, `PostSubmitDiscovery`, and
-`IsDiscoveryKnown` by byte signature on the first F8. NMS.py also installs its
+`IsDiscoveryKnown` by byte signature on the first F10. NMS.py also installs its
 required hooks by signature. Moving a function therefore does not by itself
 break the release.
 

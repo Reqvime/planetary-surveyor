@@ -1,12 +1,12 @@
 # Static analysis
 
-В Git хранятся только воспроизводимые Ghidra scripts. Сам проект Ghidra, копия
-`NMS.exe`, декомпиляция и отчёты остаются локальными и не коммитятся.
+Only reproducible Ghidra scripts are tracked here. The Ghidra project, the
+local copy of `NMS.exe`, decompiled output, and reports are not committed.
 
-- `InspectPopulateDiscoveryInfo.java` находит официальную сигнатуру populate,
-  перечисляет прямые вызовы и декомпилирует функцию.
-- `InspectFunctionsByAddress.java` выводит entry bytes, callers, direct callees и
-  декомпиляцию для заданных VA.
+- `InspectPopulateDiscoveryInfo.java` finds the known populate signature,
+  lists its direct calls, and decompiles the function.
+- `InspectFunctionsByAddress.java` shows entry bytes, callers, direct callees,
+  and decompiled output for the given virtual addresses.
 
-Результаты для `NMS.exe` 178938 перенесены в `docs/findings.md`. Эти адреса и
-сигнатуры нельзя автоматически переносить на следующий build игры.
+Results for `NMS.exe` 178938 are recorded in `docs/findings.md`. Do not assume
+the same addresses or signatures apply to another game build.

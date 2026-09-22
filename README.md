@@ -9,14 +9,16 @@ miss a few entries on some planets.
 ## Install
 
 1. Back up your save and close the game.
-2. Download `Planetary-Surveyor-v1.1.0.zip` from the Releases page.
+2. Download `Planetary-Surveyor-v1.1.1.zip` from the Releases page. Do not use
+   GitHub's automatic `Source code` downloads; they are for developers.
 3. Extract the archive into the main No Man's Sky folder.
 4. If `Binaries\version.dll` already exists, keep it.
 5. If it does not exist, copy the included optional `version.dll` into
    `Binaries`.
 6. Start the game normally through Steam.
 
-There is no installer, console window or separate Python setup.
+There is no installer, console window or separate Python setup. Python is
+already included in the archive.
 
 ## Use
 
@@ -44,6 +46,10 @@ takes effect after restarting the game. Other settings apply immediately.
 - The mod was tested on Steam executable versions 178994 and 179292.
 
 Logs are stored in `PlanetaryDiscoveryScanner\logs`.
+
+Do not copy `app` or `runtime` into `GAMEDATA`. If the settings appear but F10
+does nothing, close the game and include the newest log files when reporting
+the problem.
 
 ## How it works
 

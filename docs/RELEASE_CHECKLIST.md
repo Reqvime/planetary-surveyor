@@ -2,7 +2,7 @@
 
 ## Nexus Mods
 
-Upload `dist\Planetary-Surveyor-v1.1.0.zip` as the Main File.
+Upload `dist\Planetary-Surveyor-v1.1.1.zip` as the Main File.
 
 Use `docs/NEXUS_DESCRIPTION.md` as the page description. Do not upload the
 developer/source ZIP to Nexus; link the GitHub repository instead.
@@ -13,7 +13,7 @@ Commit the source tree, tests, build scripts, licence, changelog, and docs. Keep
 generated archives, bundled Python, logs, local virtual environments, compiler
 output, dumps, and smoke-test directories out of Git; `.gitignore` covers them.
 
-Tag the release commit `v1.1.0` and attach `Planetary-Surveyor-v1.1.0.zip` to
+Tag the release commit `v1.1.1` and attach `Planetary-Surveyor-v1.1.1.zip` to
 the GitHub Release. GitHub creates source-code archives automatically.
 
 Future work should start from a new feature or development branch. Merge tested

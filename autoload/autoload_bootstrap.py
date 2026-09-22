@@ -3,13 +3,7 @@ from __future__ import annotations
 import os
 import sys
 
-ROOT_TEXT = os.environ.get("PDS_ROOT", "")
-if not os.path.isfile(os.path.join(ROOT_TEXT, "runtime", "python313.dll")):
-    for _entry in sys.path:
-        if os.path.basename(_entry).lower() == "python313.zip":
-            _runtime_dir = os.path.dirname(_entry)
-            ROOT_TEXT = os.path.dirname(_runtime_dir)
-            break
+ROOT_TEXT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LOG_DIR_TEXT = os.path.join(ROOT_TEXT, "logs")
 BOOTSTRAP_LOG_TEXT = os.path.join(LOG_DIR_TEXT, "autoload-bootstrap-python.log")
 

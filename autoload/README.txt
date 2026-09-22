@@ -1,4 +1,4 @@
-Planetary Discovery Scanner 1.1.0 beta - automatic launcher edition
+Planetary Discovery Scanner 1.1.1 beta - automatic launcher edition
 ====================================================================
 
 FAUNA: full-planet discovery is the reliable feature.
@@ -26,7 +26,7 @@ loader. An incompatible existing version.dll stops installation with an error.
 
 GAME UPDATES
 The mod resolves the three game functions it calls by byte signature on the
-first F8. Small updates that only move code normally keep working without a mod
+first F10. Small updates that only move code normally keep working without a mod
 update. If a signature or an NMS.py structure changes, discovery submission is
 blocked instead of using an unverified address. Check logs after an update.
 

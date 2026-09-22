@@ -1,4 +1,4 @@
-PLANETARY SURVEYOR 1.1.0
+PLANETARY SURVEYOR 1.1.1
 ========================
 
 INSTALL
@@ -18,6 +18,9 @@ finishes. Settings are available in Options under Planetary Surveyor.
 
 Fauna scanning is reliable. Flora and mineral scanning is optional and may miss
 some entries.
+
+Do not move app or runtime into GAMEDATA. If the settings appear but F10 does
+nothing, close the game and check PlanetaryDiscoveryScanner\logs.
 
 UNINSTALL
 

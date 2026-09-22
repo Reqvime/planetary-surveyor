@@ -8,7 +8,7 @@ would make discovery submission unsafe.
 ## Changes that normally need no mod update
 
 NMS.py/pyMHF locates its frame and state hooks by byte signature. The scanner
-also scans the loaded `NMS.exe` on the first F8 for `SubmitDiscoveryData`,
+also scans the loaded `NMS.exe` on the first F10 for `SubmitDiscoveryData`,
 `PostSubmitDiscovery`, and `IsDiscoveryKnown`. It decodes the application-data
 pointer from the matched known-check function rather than storing its address.
 
@@ -28,14 +28,14 @@ is reported for diagnosis but is not itself used as a hard compatibility gate.
 Missing signatures prevent their hooks or the scanner's submit path from being
 installed. Structure changes are harder to prove automatically; consequently a
 new executable build should still be treated as unverified until a maintainer or
-user confirms one F8 result and checks the log.
+user confirms one F10 result and checks the log.
 
 ## After an unnoticed game update
 
-1. Back up the save before testing F8.
+1. Back up the save before testing F10.
 2. Start the game normally. If it reaches the menu, check the newest
    `PlanetaryDiscoveryScanner\logs\pymhf-*.log`.
-3. On the first F8, require `GameAddressesResolved result=ok` before trusting the
+3. On the first F10, require `GameAddressesResolved result=ok` before trusting the
    batch. `PlanetDiscoverySubmitBlocked` means no discovery mutation was made.
 4. Report the `NMS.exe` file version and the relevant log. A documentation-only
    compatibility confirmation does not require rebuilding the archive; a changed
@@ -61,7 +61,7 @@ survived; it does not prove the scanner's offsets are still correct.
 ## Adding a layout profile safely
 
 Never change an offset only because an address is readable. A candidate profile
-must pass all of these read-only checks before F8 can submit anything:
+must pass all of these read-only checks before F10 can submit anything:
 
 1. `application_data + current_planet_address_offset` contains a nonzero
    universe address.
@@ -93,8 +93,6 @@ The discovery manager (`0x2CE840`), post-submit context (`0x307848`), solar
 system, planet, fauna, and object-spawn layouts were unchanged. The scanner now
 validates and selects either profile at runtime.
 
-The tested baseline for release 1.1.0 is NMS 7.0 Steam executable version
-178994 with NMS.py 178994.0. Source after that release also contains a validated
-layout profile for executable 179292, pending the final backed-up F8 runtime
-test. Epic Games autoload uses the same mechanism but has not yet received a
-runtime test.
+The tested baseline for release 1.1.1 is NMS 7.0 Steam executable versions
+178994 and 179292 with NMS.py 178994.0. Epic Games autoload uses the same
+mechanism but has not yet received a runtime test.

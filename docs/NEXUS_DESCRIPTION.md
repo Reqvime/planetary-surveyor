@@ -21,7 +21,7 @@ so the game still starts normally from Steam after installation.
 ## Installation
 
 1. Back up your saves and close the game.
-2. Download `Planetary-Surveyor-v1.1.0.zip`.
+2. Download `Planetary-Surveyor-v1.1.1.zip`.
 3. Extract it into the No Man's Sky folder. This places the runtime folder and
    `Binaries\PlanetaryDiscoveryScanner.mods` directly.
 4. If `Binaries\version.dll` does not exist, copy the supplied optional
@@ -31,6 +31,9 @@ so the game still starts normally from Steam after installation.
 This installation runs no installer, CMD, or PowerShell and needs no
 administrator rights or separate Python. See `README.txt` in the archive for
 exact paths and safe removal.
+
+Do not copy `app` or `runtime` into `GAMEDATA`. Version 1.1.1 fixes the startup
+problem that made this workaround necessary for some players.
 
 The package downloads nothing. Steam autoload has been runtime-tested with both
 the included loader and a compatible third-party `*.mods` loader. Epic Games

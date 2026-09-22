@@ -54,7 +54,7 @@ $environment = & (Join-Path $PSScriptRoot 'check-environment.ps1') -GameRoot $Ga
 $testedVersion = '178994'
 if ($environment.FileVersion -ne $testedVersion) {
     Write-Warning ("NMS.exe $($environment.FileVersion) is newer or older than the tested $testedVersion. " +
-        'All required signatures are checked below; F8 also resolves the game functions again at runtime.')
+        'All required signatures are checked below; F10 also resolves the game functions again at runtime.')
 }
 $requiredHooks = @(
     'SubmitDiscoveryPipelineV70Candidate',
@@ -77,8 +77,8 @@ if ($PreflightOnly) {
     exit 0
 }
 
-Write-Host 'Planetary Surveyor v1.1.0'
-Write-Host 'F8 registers the complete fauna, flora, and mineral catalogue for the current planet.'
+Write-Host 'Planetary Surveyor v1.1.1'
+Write-Host 'F10 registers the complete fauna, flora, and mineral catalogue for the current planet.'
 Write-Host 'No visor, target, or search radius is required. Up to 128 discoveries submit one per second.'
 Write-Host 'On foot on a planet, press and release F10 once, then wait until the sounds stop.'
 Write-Host "Logs: $projectRoot\logs"

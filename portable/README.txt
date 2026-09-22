@@ -1,7 +1,7 @@
-Planetary Discovery Scanner 1.1.0 - portable package
+Planetary Discovery Scanner 1.1.1 - portable package
 ====================================================
 
-Press F8 on a planet to register its fauna, flora, and minerals.
+Press F10 on a planet to register its fauna, flora, and minerals.
 No analysis visor, target, or travelling around the planet is needed.
 
 
@@ -37,11 +37,11 @@ Double-click UNINSTALL.cmd, then delete this folder.
 
 GOOD TO KNOW
 - Fauna is the reliable feature. Flora and minerals are experimental and can
-  remain incomplete on some planets even after a repeated F8 press.
+  remain incomplete on some planets even after a repeated F10 press.
 - Discoveries cannot be undone one by one; keep your backup.
 - Play single-player, preferably in Steam Offline Mode. Disable other scanner
   or discovery mods.
-- After a game update F8 may do nothing until the mod is updated; the log then
+- After a game update F10 may do nothing until the mod is updated; the log then
   contains PlanetDiscoverySubmitBlocked.
 - Logs are in the logs folder next to this file.
 

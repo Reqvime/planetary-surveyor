@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.1.1 - 2026-09-22
+
+- Fixed a startup problem that could show the settings menu while leaving F10
+  inactive.
+- The Python loader now finds the installed `PlanetaryDiscoveryScanner` folder
+  directly instead of sometimes looking for `app\mod` inside `GAMEDATA`.
+- Clarified which GitHub download players should use. Python is still included
+  in the ready-to-install archive.
+
 ## 1.1.0 - 2026-09-19
 
 - Added a native Planetary Discovery Scanner section to the game's Options menu.

@@ -886,7 +886,7 @@ def _discovery_fingerprint(data: _DiscoveryData) -> tuple[int, int, tuple[int, .
 class DiscoveryProbe(Mod):
     __author__ = "NMSDiscoveryLab"
     __description__ = "Full planet fauna, flora, and mineral discovery on F10"
-    __version__ = "1.1.0"
+    __version__ = "1.1.1"
 
     def __init__(self):
         super().__init__()
